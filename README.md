@@ -4,4 +4,4 @@ The repository focuses on blind 75 problems. The repository might also contains 
 
 Some problems might be solved in Python. The repository is designed to help developers prepare for their technical interview
 
-The repository is only for learning purposes. 
+The repository is only for learning purposes. Please don't use it for other purposes.
