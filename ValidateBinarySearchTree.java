@@ -33,4 +33,11 @@ class ValidateBinarySearchTree {
         return isValidBST(root.left) && isValidBST(root.right);
         
     }
+
+    boolean valid(TreeNode node,TreeNode  left,TreeNode  right){
+        if(node != null){
+            return true;
+        }
+
+    }
 }
