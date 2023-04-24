@@ -15,28 +15,16 @@
  */
 class ValidateBinarySearchTree {
     public boolean isValidBST(TreeNode root) {
-        System.out.println(root.val);
-
-        if(root == null){
-            return false;
-        }
-
-        if(root.left == null && root.right == null){
-            return true;
-        }
-
-        if(root.left.val < root.val && root.right.val > root.val){
-
-            System.out.println("here");
-            return true;
-        }
-        return isValidBST(root.left) && isValidBST(root.right);
         
     }
 
-    boolean valid(TreeNode node,TreeNode  left,TreeNode  right){
+    boolean valid(TreeNode node, int left, int right){
         if(node != null){
             return true;
+        }
+        
+        if !(node.val < right && root.right.val > root.val){
+            return false;
         }
 
     }
