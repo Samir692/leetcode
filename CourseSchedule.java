@@ -12,12 +12,6 @@ class CourseSchedule {
             }
         }
 
-        // for (Integer name: preMap.keySet()) {
-        //     String key = name.toString();
-        //     String value = preMap.get(name).toString();
-        //     System.out.println(key + " " + value);
-        // }
-
         Set<Integer> visitSet = new HashSet<>();
         for(int i = 0; i < numCourses; i++){
             System.out.println(i + "- not much");
@@ -31,31 +25,19 @@ class CourseSchedule {
     private boolean dfs(int course, Map<Integer, ArrayList<Integer>> preMap, Set<Integer> visitSet){
 
         if(visitSet.contains(course)){
-            System.out.println("maybe");
             return false;
         } 
-            
-
 
         if(preMap.get(course) == null || preMap.get(course).isEmpty()){
-             System.out.println(course + " = " + preMap.get(course));
             return true;
         } 
 
         visitSet.add(course);
         for (int i = 0; i < preMap.get(course).size(); i++){
-            // if(course == 3){
-            //     Iterator itr = visitSet.iterator();
-            //     while (itr.hasNext()) {
-            //         System.out.println(itr.next());
-            //         System.out.println(visitSet.contains(course));
-            //     }
-            // }
-            if(!dfs(preMap.get(course).get(0), preMap, visitSet)) return false;
+            if(!dfs(preMap.get(course).get(i), preMap, visitSet)) return false;
         }
         visitSet.remove(course);
         preMap.put(course, new ArrayList<>());
         return true;
-
     }
 }
